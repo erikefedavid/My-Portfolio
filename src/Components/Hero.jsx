@@ -24,7 +24,7 @@ export const Hero = () => {
   const socialLinks = [
     {
       icon: <FaGithub />, // ✅ actual JSX, not a string
-      link: "https://github.com/ERIKEFE-DAVID",
+      link: "https://github.com/erikefedavid",
     },
     {
       icon: <FaLinkedin />,
