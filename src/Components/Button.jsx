@@ -1,7 +1,11 @@
-export const Button = ({text,className}) => {
+export const Button = ({ text, className = "", onClick }) => {
+    const Component = onClick ? "button" : "span";
     return ( 
-        <button className={` ${className} rounded-full p-1 transition-all duration-300 w-20 backdrop-blur bg-white/10 shadow`}>
+        <Component
+            onClick={onClick}
+            className={`inline-flex items-center justify-center px-3 py-1 text-xs md:text-sm font-medium rounded-full transition-all duration-300 backdrop-blur bg-white/10 shadow whitespace-nowrap ${className}`}
+        >
            {text}
-        </button>
+        </Component>
      );
-}
+};

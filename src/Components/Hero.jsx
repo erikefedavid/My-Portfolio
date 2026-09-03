@@ -143,9 +143,9 @@ export const Hero = () => {
   origin: "🌍 Crafting code from Nigeria to the World",
   role: "Frontend Developer",
   stack: {
-    languages: ["JavaScript", "Python (Basics)"],
-    frameworks: ["React", "TailwindCSS"],
-  }
+    languages: ["JavaScript", "Python"],
+    frameworks: ["React", "Next.js", "TailwindCSS"],
+  },
   traits: [
     "clean-code advocate",
     "API explorer",

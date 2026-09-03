@@ -16,14 +16,18 @@ const myProjects = [
     },
 
         {
-        img:"/images/weather.png",
-        alt:"Weather App",
-        header:"Weather App",
-        link:"https://erikefedavid.github.io/WEATHER-APP/",
-        text:"A sleek and responsive weather app built with React and TailwindCSS, featuring real-time forecasts and a clean UI.",
+        img:"/images/Docdigitize.png",
+        alt:"DocDigitize",
+        header:"DocDigitize",
+        link:"https://docdigitize.vercel.app/",
+        text:"DocDigitise is a full-stack document digitization and AI summarization platform that turns scanned or photographed documents into structured, searchable digital text with automatically generated summaries.",
         button:[
-            "React",
-            "Tailwind",
+            "Next.js",
+            "Tailwind CSS",
+            "Shadcn UI",
+            "MongoDB",
+            "Cloudinary",
+            "Groq Cloud API"
         ]
     },
 
@@ -85,26 +89,29 @@ const item = {
                         <motion.div 
                         whileHover={{y:-20}}
                         variants={item}
-                        key={index} className=" group 2xl:w-[600px] xl:w-[350px] lg:w-[300px] sm:w-[280px] w-[300px] mx-auto sm:mx-auto my-6 sm:my-0 pb-8   relative rounded-xl border-2 border-white/30 backdrop-filter-lg hover:border-teal-500 bg-white/10 shadow-xl">
+                        key={index} className=" group 2xl:w-[600px] xl:w-[350px] lg:w-[300px] sm:w-[280px] w-[300px] mx-auto sm:mx-auto my-6 sm:my-0 relative rounded-xl border-2 border-white/30 backdrop-filter-lg hover:border-teal-500 bg-white/10 shadow-xl flex flex-col overflow-hidden">
                             <a 
                             href={project.link}
                             target="_blank"
-                             rel="noopener noreferrer"            
+                             rel="noopener noreferrer"
+                             className="flex flex-col h-full justify-between"            
                             >
-                            <div className="relative overflow-hidden 
-                             before:content-[''] before:absolute before:top-0 before:left-[-100%]
-                              before:w-full before:h-full before:bg-gradient-to-r before:from-transparent
-                               before:via-white/20 before:to-transparent 
-                                before:transition-all before:duration-800 
-                                group-hover:before:left-[100%] ">
-                            <img 
-                            src={project.img}
-                             alt={project.alt} 
-                             className="w-full rounded-lg "/>
+                            <div>
+                                <div className="relative overflow-hidden 
+                                 before:content-[''] before:absolute before:top-0 before:left-[-100%]
+                                  before:w-full before:h-full before:bg-gradient-to-r before:from-transparent
+                                   before:via-white/20 before:to-transparent 
+                                    before:transition-all before:duration-800 
+                                    group-hover:before:left-[100%] ">
+                                <img 
+                                src={project.img}
+                                 alt={project.alt} 
+                                 className="w-full rounded-t-lg "/>
+                                </div>
+                                <h1 className="text-2xl font-bold my-4 px-4 text-white" > {project.header} </h1>
+                                <p className="w-full mb-4 text-gray-400 px-4 text-base">{project.text}</p>
                             </div>
-                            <h1 className="text-2xl font-bold tex my-6 px-4 text-white" > {project.header} </h1>
-                            <p className="w-full  my-6 text-gray-500 px-4 text-lg">{project.text}</p>
-                            <div className=" absolute bottom-4  left-1/14 flex  gap-4 xl:gap-6"> 
+                            <div className="px-4 pb-6 pt-2 flex flex-wrap gap-2 mt-auto"> 
                                 {project.button.map((btn,index)=>(
                                     <Button key={index} text={btn}    className="text-teal-500 border border-teal-500" />
                                 ))}
