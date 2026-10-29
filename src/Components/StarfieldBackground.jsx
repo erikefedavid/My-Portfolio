@@ -48,20 +48,22 @@ export const StarfieldBackground = () => {
       reset() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        // Visible star sizes: 1px to 2.8px
-        this.size = Math.random() * 1.8 + 1;
-        // Drift speed
-        this.vx = (Math.random() - 0.5) * 0.35;
-        this.vy = (Math.random() - 0.5) * 0.35;
-        // Bright twinkling
-        this.baseAlpha = Math.random() * 0.4 + 0.5;
+        // Subtle, delicate star sizes: 0.8px to 1.8px
+        this.size = Math.random() * 1.0 + 0.8;
+        // Smooth calm drift
+        this.vx = (Math.random() - 0.5) * 0.2;
+        this.vy = (Math.random() - 0.5) * 0.2;
+        // Softer base brightness
+        this.baseAlpha = Math.random() * 0.35 + 0.3;
         this.alpha = this.baseAlpha;
-        this.twinkleSpeed = Math.random() * 0.03 + 0.01;
-        // Color variance: 30% royal blue / cyan, 70% pure white
+        this.phase = Math.random() * Math.PI * 2;
+        // Gentle, slow breathing instead of rapid flashing
+        this.twinkleSpeed = Math.random() * 0.0015 + 0.0008;
+        // Color variance: 15% cyan, 15% blue, 70% soft white
         const rand = Math.random();
-        if (rand < 0.2) {
+        if (rand < 0.15) {
           this.color = "cyan";
-        } else if (rand < 0.4) {
+        } else if (rand < 0.3) {
           this.color = "blue";
         } else {
           this.color = "white";
@@ -72,8 +74,8 @@ export const StarfieldBackground = () => {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Twinkle
-        this.alpha = this.baseAlpha + Math.sin(Date.now() * this.twinkleSpeed) * 0.25;
+        // Calm, subtle breathing twinkle
+        this.alpha = this.baseAlpha + Math.sin(Date.now() * this.twinkleSpeed + this.phase) * 0.12;
 
         // Screen wrap
         if (this.x < 0) this.x = width;
@@ -91,8 +93,8 @@ export const StarfieldBackground = () => {
             const forceDirectionX = dx / distance;
             const forceDirectionY = dy / distance;
             const force = (mouse.radius - distance) / mouse.radius;
-            // Noticeable displacement
-            const push = force * 4.5;
+            // Smooth natural displacement
+            const push = force * 4.0;
             this.x -= forceDirectionX * push;
             this.y -= forceDirectionY * push;
           }
@@ -104,21 +106,21 @@ export const StarfieldBackground = () => {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
 
-        const currentAlpha = Math.max(0.2, Math.min(1, this.alpha));
+        const currentAlpha = Math.max(0.15, Math.min(0.85, this.alpha));
 
         if (this.color === "cyan") {
           ctx.fillStyle = `rgba(56, 189, 248, ${currentAlpha})`;
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = "rgba(56, 189, 248, 0.7)";
+          ctx.shadowBlur = 4;
+          ctx.shadowColor = "rgba(56, 189, 248, 0.35)";
         } else if (this.color === "blue") {
           ctx.fillStyle = `rgba(96, 165, 250, ${currentAlpha})`;
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = "rgba(59, 130, 246, 0.8)";
+          ctx.shadowBlur = 4;
+          ctx.shadowColor = "rgba(59, 130, 246, 0.35)";
         } else {
           ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha})`;
-          if (this.size > 2) {
-            ctx.shadowBlur = 6;
-            ctx.shadowColor = "rgba(255, 255, 255, 0.8)";
+          if (this.size > 1.4) {
+            ctx.shadowBlur = 3;
+            ctx.shadowColor = "rgba(255, 255, 255, 0.35)";
           }
         }
 
@@ -130,8 +132,8 @@ export const StarfieldBackground = () => {
     let stars = [];
     const initStars = () => {
       stars = [];
-      // Generous density for clear visibility (~200 to 300 stars on desktop)
-      const count = Math.max(120, Math.floor((width * height) / 5500));
+      // Clean, uncrowded density (~120 to 180 stars on desktop)
+      const count = Math.max(90, Math.floor((width * height) / 7500));
       for (let i = 0; i < count; i++) {
         stars.push(new Star());
       }
