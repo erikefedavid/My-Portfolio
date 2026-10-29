@@ -1,128 +1,211 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import {Button} from "../Components/Button"
+import { ArrowUpRight, FolderGit2 } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 export const Projects = () => {
-const myProjects = [
+  const [filter, setFilter] = useState("all");
+
+  const projects = [
     {
-        img:"/images/dashboard.png",
-        alt:"Admin-Dashboard",
-        header:"Admin Dashboard",
-        link:"https://erikefedavid.github.io/Admin-Dashboard/",
-        text:"A responsive and interactive admin dashboard built with React and TailwindCSS for seamless data management.",
-        button:[
-            "React",
-            "Tailwind"
-]
+      id: "tooldeck",
+      category: "fullstack",
+      title: "ToolDeck — Curated Free AI & Dev Tools Directory",
+      badge: "Featured • AI Directory",
+      image: "/images/tooldeck.png",
+      alt: "ToolDeck Free AI Tools Directory",
+      liveUrl: "https://aitooldesk.vercel.app/",
+      githubUrl: "https://github.com/erikefedavid/Tooldesk",
+      description:
+        "A curated discovery platform of 100+ free AI tools, developer utilities, and creative software. Integrates Gemini API recommendations to guide users to the exact tool for their task without paywalls or fake trials.",
+      techStack: ["Next.js", "TypeScript", "Gemini API", "Tailwind CSS", "Framer Motion"]
     },
-
-        {
-        img:"/images/Docdigitize.png",
-        alt:"DocDigitize",
-        header:"DocDigitize",
-        link:"https://docdigitize.vercel.app/",
-        text:"DocDigitise is a full-stack document digitization and AI summarization platform that turns scanned or photographed documents into structured, searchable digital text with automatically generated summaries.",
-        button:[
-            "Next.js",
-            "Tailwind CSS",
-            "Shadcn UI",
-            "MongoDB",
-            "Cloudinary",
-            "Groq Cloud API"
-        ]
+    {
+      id: "docdigitize",
+      category: "fullstack",
+      title: "DocDigitize — AI Document Scanner & Summarizer",
+      badge: "AI & Full-Stack",
+      image: "/images/Docdigitize.png",
+      alt: "DocDigitize AI Document Platform",
+      liveUrl: "https://docdigitize.vercel.app/",
+      githubUrl: "https://github.com/erikefedavid",
+      description:
+        "Full-stack document digitization and AI summarization platform that extracts text from scanned documents and images using Groq Cloud AI and Next.js. Research paper accepted at ICMLDE.",
+      techStack: ["Next.js", "React", "Groq AI", "Tailwind CSS", "MongoDB", "Cloudinary"]
     },
-
-        {
-        img:"/images/swissmark.png",
-        alt:"SwissMarkk",
-        header:"Swissmarkk",
-        link:"https://erikefedavid.github.io/SWISSMARK/",
-        text:"A static business website built with HTML and CSS to showcase services, products, and contact details for a luxury fragrance brand.",
-        button:[
-            "HTML",
-            "CSS"
-]
+    {
+      id: "dashboard",
+      category: "frontend",
+      title: "Interactive Enterprise Admin Dashboard",
+      badge: "Frontend UI",
+      image: "/images/dashboard.png",
+      alt: "Admin Dashboard UI Preview",
+      liveUrl: "https://erikefedavid.github.io/Admin-Dashboard/",
+      githubUrl: "https://github.com/erikefedavid/Admin-Dashboard",
+      description:
+        "A responsive management dashboard built with React and Tailwind CSS for seamless data monitoring, user administration, and real-time interface workflows.",
+      techStack: ["React", "Tailwind CSS", "Lucide Icons", "Vite"]
     },
-]
+    {
+      id: "swissmark",
+      category: "frontend",
+      title: "Swissmarkk — Luxury Fragrance Brand Showcase",
+      badge: "Commercial UI",
+      image: "/images/swissmark.png",
+      alt: "Swissmarkk Luxury Website",
+      liveUrl: "https://erikefedavid.github.io/SWISSMARK/",
+      githubUrl: "https://github.com/erikefedavid/SWISSMARK",
+      description:
+        "An elegant, high-conversion commercial website built to showcase luxury fragrances, featuring smooth product exploration, curated typography, and responsive storytelling.",
+      techStack: ["HTML5", "CSS3", "JavaScript", "Responsive UI"]
+    }
+  ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3, // delay between children
-      delayChildren: 0.3,   // wait before starting the first child
-    },
-  },
-};
+  const filteredProjects =
+    filter === "all"
+      ? projects
+      : projects.filter((project) => project.category === filter);
 
-const item = {
-  hidden: { opacity: 0, y: 100 }, // start off-screen left
-  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } },
-};
-
-    return ( 
-        <section
-        id="projects"
+  return (
+    <section id="projects" className="py-20 border-t border-white/[0.06]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        {/* Section Header & Filters */}
+        <motion.div 
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10"
         >
-            <div
-             className="bg-[#0f172a]  border-b border-teal-500  w-full"
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-2">
+              Featured Work
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base">
+              A selection of products and web applications I've engineered.
+            </p>
+          </div>
+
+          {/* Simple Filter Pills */}
+          <div className="flex items-center gap-1.5 p-1 rounded-xl bg-white/[0.03] border border-white/[0.08] self-start sm:self-auto">
+            <button
+              onClick={() => setFilter("all")}
+              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                filter === "all"
+                  ? "bg-blue-600 text-white"
+                  : "text-slate-400 hover:text-white"
+              }`}
             >
-                <motion.div 
-                initial={{scale:0, opacity:0}}
-                whileInView={{scale:1, opacity:1}}
-                transition={{ type: "spring", stiffness: 120, damping: 10 }}
-                viewport={{ once: true, amount: 0.2 }} 
-                className="2xl:text-7xl xl:text-5xl lg:text-4xl text-3xl   text-white font-bold text-center 2xl:pt-30 xl:pt-20  lg:pt-10 md:pt-8 sm:pt-6 pt-6">
-                  <h1> My Projects</h1>
-                </motion.div>
- 
-              <div>
-                <motion.div 
-                variants={container}
-                  initial="hidden"
-                  whileInView="show" 
-                  viewport={{once:true}}
-                >
-                   <motion.div
-                   className="lg:flex sm:flex sm:flex-wrap block 2xl:my-20 xl:my-12 lg:my-10 md:my-8  my-6 justify-evenly sm:gap-6">
-                     {myProjects.map((project,index)=>(
-                        <motion.div 
-                        whileHover={{y:-20}}
-                        variants={item}
-                        key={index} className=" group 2xl:w-[600px] xl:w-[350px] lg:w-[300px] sm:w-[280px] w-[300px] mx-auto sm:mx-auto my-6 sm:my-0 relative rounded-xl border-2 border-white/30 backdrop-filter-lg hover:border-teal-500 bg-white/10 shadow-xl flex flex-col overflow-hidden">
-                            <a 
-                            href={project.link}
-                            target="_blank"
-                             rel="noopener noreferrer"
-                             className="flex flex-col h-full justify-between"            
-                            >
-                            <div>
-                                <div className="relative overflow-hidden 
-                                 before:content-[''] before:absolute before:top-0 before:left-[-100%]
-                                  before:w-full before:h-full before:bg-gradient-to-r before:from-transparent
-                                   before:via-white/20 before:to-transparent 
-                                    before:transition-all before:duration-800 
-                                    group-hover:before:left-[100%] ">
-                                <img 
-                                src={project.img}
-                                 alt={project.alt} 
-                                 className="w-full rounded-t-lg "/>
-                                </div>
-                                <h1 className="text-2xl font-bold my-4 px-4 text-white" > {project.header} </h1>
-                                <p className="w-full mb-4 text-gray-400 px-4 text-base">{project.text}</p>
-                            </div>
-                            <div className="px-4 pb-6 pt-2 flex flex-wrap gap-2 mt-auto"> 
-                                {project.button.map((btn,index)=>(
-                                    <Button key={index} text={btn}    className="text-teal-500 border border-teal-500" />
-                                ))}
-                            </div>
-                            </a>
-                        </motion.div>
-                     ))}
-                     </motion.div>
-                </motion.div>
-            </div>
-            </div>
-        </section>
-     );
-}
+              All
+            </button>
+            <button
+              onClick={() => setFilter("fullstack")}
+              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                filter === "fullstack"
+                  ? "bg-blue-600 text-white"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              Full-Stack / AI
+            </button>
+            <button
+              onClick={() => setFilter("frontend")}
+              className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                filter === "frontend"
+                  ? "bg-blue-600 text-white"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              Frontend
+            </button>
+          </div>
+        </motion.div>
+
+        {/* Projects List - Minimalist Clean Cards */}
+        <div className="space-y-8">
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              className="p-6 sm:p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.14] transition-all duration-300"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                
+                {/* Image Preview */}
+                <div className="md:col-span-5 rounded-xl overflow-hidden border border-white/10 bg-[#0d1017] aspect-[16/10]">
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+
+                {/* Details */}
+                <div className="md:col-span-7 flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[11px] font-mono text-blue-400 px-2 py-0.5 rounded bg-blue-500/10">
+                        {project.badge}
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5 mb-5">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 text-[11px] font-mono rounded bg-white/[0.04] text-slate-400"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex items-center gap-3 pt-3 border-t border-white/[0.06]">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-blue-400 transition-colors"
+                    >
+                      <span>Live Demo</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+
+                    <span className="text-slate-600">•</span>
+
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white transition-colors"
+                    >
+                      <FaGithub className="w-3.5 h-3.5" />
+                      <span>Source Code</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};

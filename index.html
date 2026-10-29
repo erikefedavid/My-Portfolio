@@ -1,12 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/jpeg" href="/images/logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>David Erikefe | davebuiltit — Frontend Engineer</title>
+    <meta name="description" content="Portfolio of David Erikefe (davebuiltit), a frontend engineer focused on building clean, fast, and thoughtful web interfaces." />
+    <meta name="keywords" content="Frontend Engineer, React Developer, Next.js Developer, Web Developer, Portfolio, UI/UX, David Erikefe, davebuiltit" />
+    <meta name="author" content="David Erikefe" />
+    <!-- Canonical & SEO Meta -->
+    <link rel="canonical" href="https://daviderikefe.vercel.app/" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph (WhatsApp, LinkedIn, Facebook preview) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://daviderikefe.vercel.app/" />
+    <meta property="og:title" content="David Erikefe | davebuiltit — Frontend Engineer" />
+    <meta property="og:description" content="Portfolio of David Erikefe (davebuiltit), a creative frontend engineer building high-performance web applications with React, Next.js, and TypeScript." />
+    <meta property="og:image" content="https://daviderikefe.vercel.app/images/tooldeck.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Davebuiltit" />
+    <meta name="twitter:creator" content="@Davebuiltit" />
+    <meta name="twitter:title" content="David Erikefe | davebuiltit — Frontend Engineer" />
+    <meta name="twitter:description" content="Portfolio of David Erikefe (davebuiltit), a creative frontend engineer building high-performance web applications with React, Next.js, and TypeScript." />
+    <meta name="twitter:image" content="https://daviderikefe.vercel.app/images/tooldeck.png" />
+
+    <!-- Structured Data (JSON-LD) for Search Engine Crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "David Erikefe",
+      "alternateName": "davebuiltit",
+      "url": "https://daviderikefe.vercel.app/",
+      "jobTitle": "Frontend Engineer",
+      "sameAs": [
+        "https://github.com/erikefedavid",
+        "https://www.linkedin.com/in/davebuiltit",
+        "https://x.com/Davebuiltit"
+      ],
+      "knowsAbout": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Frontend Engineering"]
+    }
+    </script>
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="bg-[#090a0f] text-slate-100 antialiased selection:bg-blue-500/30 selection:text-blue-200">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

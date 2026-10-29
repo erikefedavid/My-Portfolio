@@ -1,68 +1,155 @@
-import { useState } from "react";
-import {Menu} from 'lucide-react'
-import {motion} from "framer-motion"
+import { useState, useEffect } from "react";
+import { Menu, X, FileText, ArrowDownToLine, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
 export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-const [menuOpen, setMenuOpen] = useState(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 15);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
- const NavLinks = [
-    {
-        name:"Home",
-        href:"#home"
-    },
-        {
-        name:"Projects",
-        href:"#projects"
-    },
-        {
-        name:"Contact",
-        href:"#contact"
-    }
- ]
+  const navLinks = [
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+  ];
 
-    return ( 
-    <motion.div
-     initial={{  y: -100 }}        
-      animate={{  y: 0 }}           
-      transition={{ duration: 0.6, ease: "easeOut" }} 
-    
-    className={`bg-gradient-to-tl from-black via-black to bg-teal-500 w-full md:h-20  ${menuOpen?"h-fit" : "h-20" }`}>
-        <div className="flex items-center p-3 justify-between mx-10">
-            <div>
-             <h1 className="text-2xl md:text-3xl lg:text-4xl  text-teal-500 font-extrabold drop-shadow-xl drop-shadow-white/20 hover:scale-105 transform transition-all duration-1000"> Portfolio </h1>
-             </div>
-             {/* hamburger icon for mobile */}
-             <div>
-                <div className="items-center md:hidden flex">
-                    <button onClick={()=>setMenuOpen(!menuOpen) }><Menu className="text-white" /></button>
-                </div>
-             </div>
-             {/* navLinks */}
-           <div className="gap-6 hidden md:flex p-2 items-center text-lg mx-4 ">  
-            {NavLinks.map((links,index)=>(            
-              <motion.a href={links.href}
-                key={index}
-                whileTap={{ scale: 0.98 }} 
-                className="relative group text-gray-200 hover:text-teal-500 hover:scale-110 transform duration-300 ease-in-out transition-colors"
-              >{links.name}
-             <span className="absolute left-0 w-0 h-0.5 bg-teal-500 transiton-all bottom-0 duration-700 group-hover:w-full"></span>
-              </motion.a>
-               ))}   
-            </div>           
-        </div>   
-          {menuOpen &&(
-                <div className="flex  md:hidden flex-col text-xl p-4 leading-loose w-24">
-                {NavLinks.map((links,index)=>(
-                  <a 
-                  href={links.href}
-                  key={index}
-                  className="relative group text-white hover:text-teal-500"
-                  >{links.name}
-                  <span className="absolute w-0 h-0.5 transition-all ease-in-out duration-700 left-0 bottom-0 bg-teal-500 group-hover:w-28 "> </span>
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pt-4 pointer-events-none">
+      <nav
+        className={`pointer-events-auto w-full max-w-5xl transition-all duration-300 rounded-2xl border ${
+          scrolled
+            ? "bg-[#0b0e14]/90 border-white/10 shadow-xl shadow-black/40 backdrop-blur-md py-2.5 px-4 sm:px-6"
+            : "bg-[#0b0e14]/70 border-white/10 backdrop-blur-sm py-3 px-4 sm:px-6"
+        }`}
+      >
+        <div className="flex items-center justify-between">
+          {/* Brand Logo & davebuiltit text */}
+          <a
+            href="#home"
+            className="flex items-center gap-2.5 group"
+          >
+            <div className="w-10 h-10 rounded-xl overflow-hidden bg-white p-1 border border-white/20 flex items-center justify-center shrink-0 shadow-sm transition-transform duration-200 group-hover:scale-105">
+              <img
+                src="/images/logo_icon.png"
+                alt="davebuiltit logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-extrabold tracking-tight text-white group-hover:text-blue-400 transition-colors">
+                davebuiltit
+              </span>
+              <span className="text-[10px] text-slate-400 font-mono -mt-0.5">David Erikefe</span>
+            </div>
+          </a>
+
+          {/* Center Nav Links - Minimalist */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="px-4 py-1.5 text-sm font-medium text-slate-300 hover:text-white rounded-lg transition-colors hover:bg-white/[0.05]"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Right Action: Download CV / Resume CTA */}
+          <div className="hidden sm:flex items-center gap-3">
+            <a
+              href="/David_Erikefe_CV.pdf"
+              download="David_Erikefe_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-white transition-all duration-200 hover:border-blue-400/50"
+              title="Download David's Resume (PDF)"
+            >
+              <ArrowDownToLine className="w-3.5 h-3.5 text-blue-400" />
+              <span>Resume</span>
+            </a>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white transition-all duration-200 shadow-sm hover:scale-[1.02] active:scale-95"
+            >
+              <span>Contact</span>
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden items-center gap-2">
+            <a
+              href="/David_Erikefe_CV.pdf"
+              download="David_Erikefe_CV.pdf"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-white/[0.06] border border-white/15 text-white"
+            >
+              <ArrowDownToLine className="w-3 h-3 text-blue-400" />
+              <span>CV</span>
+            </a>
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle Navigation Menu"
+              className="p-1.5 rounded-lg bg-white/[0.05] border border-white/10 text-slate-300 hover:text-white"
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Dropdown */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden overflow-hidden pt-3 pb-1 border-t border-white/10 mt-3"
+            >
+              <div className="flex flex-col gap-1">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:text-white hover:bg-white/[0.06] transition-colors"
+                  >
+                    {link.name}
                   </a>
                 ))}
+                <div className="pt-2 flex flex-col gap-2">
+                  <a
+                    href="/David_Erikefe_CV.pdf"
+                    download="David_Erikefe_CV.pdf"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full py-2 rounded-lg text-xs font-semibold bg-white/[0.06] border border-white/15 text-white"
+                  >
+                    <ArrowDownToLine className="w-4 h-4 text-blue-400" />
+                    <span>Download CV (PDF)</span>
+                  </a>
+                  <a
+                    href="#contact"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full py-2 rounded-lg text-xs font-semibold bg-blue-600 text-white font-medium"
+                  >
+                    <span>Contact Me</span>
+                  </a>
                 </div>
-             )}
-    </motion.div>
-     );
-}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </header>
+  );
+};
