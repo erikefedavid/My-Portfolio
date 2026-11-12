@@ -23,15 +23,15 @@ export const Projects = () => {
     {
       id: "docdigitize",
       category: "fullstack",
-      title: "DocDigitize — AI Document Scanner & Summarizer",
-      badge: "AI & Full-Stack",
+      title: "DocDigitize — AI Document Intelligence & RAG Platform",
+      badge: "Featured • RAG & Vision AI",
       image: "/images/Docdigitize.png",
       alt: "DocDigitize AI Document Platform",
       liveUrl: "https://docdigitize.vercel.app/",
       githubUrl: "https://github.com/erikefedavid/DocDigitise",
       description:
-        "Full-stack document digitization and AI summarization platform that extracts text from scanned documents and images using Groq Cloud AI and Next.js. Research paper accepted at ICMLDE.",
-      techStack: ["Next.js", "React", "Groq AI", "Tailwind CSS", "MongoDB", "Cloudinary"]
+        "Full-stack document intelligence and grounded RAG platform. Extracts text from multi-format scans using Groq Cloud Vision, embeds documents into dense vectors, and provides sub-second Q&A with exact page citations. Research paper accepted at ICMLDE.",
+      techStack: ["Next.js", "TypeScript", "RAG Pipeline", "Groq AI", "MongoDB", "Tailwind CSS"]
     },
     {
       id: "dashboard",
