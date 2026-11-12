@@ -28,7 +28,7 @@ export const Projects = () => {
       image: "/images/Docdigitize.png",
       alt: "DocDigitize AI Document Platform",
       liveUrl: "https://docdigitize.vercel.app/",
-      githubUrl: "https://github.com/erikefedavid",
+      githubUrl: "https://github.com/erikefedavid/DocDigitise",
       description:
         "Full-stack document digitization and AI summarization platform that extracts text from scanned documents and images using Groq Cloud AI and Next.js. Research paper accepted at ICMLDE.",
       techStack: ["Next.js", "React", "Groq AI", "Tailwind CSS", "MongoDB", "Cloudinary"]
