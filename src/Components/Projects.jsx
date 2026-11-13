@@ -40,7 +40,7 @@ export const Projects = () => {
       badge: "Autonomous AI • ReAct Loop",
       image: "/images/omniagent.png",
       alt: "OmniAgent Autonomous Architecture",
-      liveUrl: "https://github.com/erikefedavid/OmniAgent",
+      liveUrl: "https://erikefedavid.github.io/OmniAgent/",
       githubUrl: "https://github.com/erikefedavid/OmniAgent",
       description:
         "Autonomous ReAct (Reasoning + Acting) problem-solving engine. Decomposes multi-step user objectives into dynamic subtasks, executes telemetry and mathematical tools, and validates evidence against zero-hallucination compliance rules.",
