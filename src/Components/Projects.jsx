@@ -47,6 +47,19 @@ export const Projects = () => {
       techStack: ["Node.js", "ReAct Framework", "Tool Execution", "Vector Matching", "Agentic Loops"]
     },
     {
+      id: "omnisearch",
+      category: "fullstack",
+      title: "OmniSearch — Edge Semantic Search & Vector Engine",
+      badge: "Edge AI • Zero Egress",
+      image: "/images/omnisearch.png",
+      alt: "OmniSearch Edge Semantic Engine Preview",
+      liveUrl: "https://erikefedavid.github.io/OmniSearch/",
+      githubUrl: "https://github.com/erikefedavid/OmniSearch",
+      description:
+        "In-process dense vector retrieval engine evaluating unit-normalized dot products in memory. Delivers sub-millisecond query responses across documents with zero external API calls and $0.00 cloud token cost.",
+      techStack: ["Node.js", "Dense Vectors", "Cosine Dot-Product", "Local RAG", "Edge AI"]
+    },
+    {
       id: "gitsentry",
       category: "fullstack",
       title: "GitSentry — Autonomous Frontend Architecture & Anti-AI Auditor",
