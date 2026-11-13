@@ -99,17 +99,17 @@ export const Projects = () => {
       techStack: ["B2B Architecture", "Tailwind CSS", "Logistics Telemetry", "Geist Design System", "Realtime Filters"]
     },
     {
-      id: "swissmark",
+      id: "payslot",
       category: "frontend",
-      title: "Swissmarkk — Luxury Fragrance Brand Showcase",
-      badge: "Commercial UI",
+      title: "PaySlot — Mobile-First Booking Engine & Paystack Storefront PWA",
+      badge: "Fintech PWA • Paystack",
       image: "/images/swissmark.png",
-      alt: "Swissmarkk Luxury Website",
-      liveUrl: "https://erikefedavid.github.io/SWISSMARK/",
-      githubUrl: "https://github.com/erikefedavid/SWISSMARK",
+      alt: "PaySlot Mobile-First Storefront Preview",
+      liveUrl: "https://erikefedavid.github.io/PaySlot/",
+      githubUrl: "https://github.com/erikefedavid/PaySlot",
       description:
-        "An elegant, high-conversion commercial website built to showcase luxury fragrances, featuring smooth product exploration, curated typography, and responsive storytelling.",
-      techStack: ["HTML5", "CSS3", "JavaScript", "Responsive UI"]
+        "Commercial mobile-first service booking engine. Enforces fintech transaction integrity with HMAC-SHA512 webhook signature verification, atomic slot lockouts, and offline-first PWA caching.",
+      techStack: ["Mobile-First PWA", "Paystack API", "HMAC Webhook Verification", "Tailwind CSS", "Offline Caching"]
     }
   ];
 
