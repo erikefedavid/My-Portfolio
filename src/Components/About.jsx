@@ -64,7 +64,7 @@ export const About = () => {
             className="md:col-span-7 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed"
           >
             <p>
-              I am a frontend engineer who loves transforming intricate designs into polished, intuitive, and high-performance web applications.
+              I am a Full-Stack AI Engineer and applied researcher specializing in autonomous multi-agent loops, on-device vector retrieval, and resilient web architectures.
             </p>
             <p>
               Under <strong className="text-white font-medium">davebuiltit</strong>, I engineer high-performance web applications across the React and Next.js ecosystems, building dashboards, autonomous agents, and AI-integrated platforms.

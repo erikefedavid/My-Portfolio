@@ -47,20 +47,21 @@ export const Hero = () => {
   const codeString = `const aboutMe = {
   codename: "davebuiltit",
   origin: "🌍 Nigeria to the World",
-  role: "Frontend Developer",
+  role: "Full-Stack AI Engineer & Researcher",
+  research: "ICMLDE 2026 Accepted Author",
   stack: {
-    languages: ["TypeScript", "JavaScript"],
-    frameworks: ["React", "Next.js", "TailwindCSS"],
-    aiAndTools: ["Groq API", "Gemini API", "MongoDB"]
+    languages: ["TypeScript", "JavaScript", "Python"],
+    frameworks: ["React", "Next.js", "Node.js", "TailwindCSS"],
+    aiAndAgents: ["ReAct Framework", "Local Vector Embeddings", "Groq / Gemini APIs"]
   },
   traits: [
-    "clean-code advocate",
-    "pixel-perfect builder",
-    "dark mode lover",
-    "always learning"
+    "autonomous agent builder",
+    "zero-hallucination compliance",
+    "60fps composite animation advocate",
+    "always shipping"
   ],
-  mission: "Bringing designs to life with code that is functional and elegant.",
-  availability: "Open to opportunities & collaborations",
+  mission: "Building autonomous AI systems, on-device RAG pipelines, and resilient full-stack platforms.",
+  availability: "Open to Full-Stack AI Roles & Collaborations",
   contact: "dafenone2006@gmail.com"
 };`;
 
@@ -84,7 +85,7 @@ export const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>Available for Frontend Roles & Contracts</span>
+              <span>Available for Full-Stack AI & Engineering Roles</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -107,9 +108,10 @@ export const Hero = () => {
               <span>&gt; </span>
               <ReactTyped
                 strings={[
-                  "Creative Frontend Engineer",
-                  "React & Next.js Developer",
-                  "UI/UX Craftsman",
+                  "Full-Stack AI Engineer",
+                  "Autonomous Agent Architect",
+                  "ICMLDE 2026 Accepted Researcher",
+                  "On-Device RAG & Systems Builder",
                   "davebuiltit",
                 ]}
                 typeSpeed={50}
@@ -126,7 +128,7 @@ export const Hero = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl mb-8"
             >
-              I merge code and creativity under <strong className="text-white font-semibold">davebuiltit</strong> to deliver dynamic, pixel-perfect websites with seamless micro-animations and clean architecture.
+              I architect autonomous AI agents, on-device vector retrieval engines, and resilient full-stack systems under <strong className="text-white font-semibold">davebuiltit</strong>. Lead author of accepted document intelligence research at <strong className="text-amber-400 font-medium">ICMLDE 2026</strong>.
             </motion.p>
 
             {/* Action Button: View Projects */}
