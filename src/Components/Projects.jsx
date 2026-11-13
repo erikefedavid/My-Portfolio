@@ -34,6 +34,19 @@ export const Projects = () => {
       techStack: ["Next.js", "TypeScript", "RAG Pipeline", "Groq AI", "MongoDB", "Tailwind CSS"]
     },
     {
+      id: "devradar",
+      category: "fullstack",
+      title: "DevRadar — Autonomous Developer Job Scanner & Outreach Agent",
+      badge: "Autonomous Agent • AI",
+      image: "/images/devradar.png",
+      alt: "DevRadar Autonomous Agent Banner",
+      liveUrl: "https://github.com/erikefedavid/devradar",
+      githubUrl: "https://github.com/erikefedavid/devradar",
+      description:
+        "Autonomous job discovery engine running on GitHub Actions. Scans multiple developer job APIs every 6 hours, leverages Google Gemini AI to analyze company tech bottlenecks, and dispatches interactive Telegram alerts with instant outreach pitches.",
+      techStack: ["Node.js", "Google Gemini AI", "GitHub Actions", "Telegram Bot API", "REST APIs"]
+    },
+    {
       id: "dashboard",
       category: "frontend",
       title: "Interactive Enterprise Admin Dashboard",
