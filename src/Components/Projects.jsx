@@ -34,6 +34,19 @@ export const Projects = () => {
       techStack: ["Next.js", "TypeScript", "RAG Pipeline", "Groq AI", "MongoDB", "Tailwind CSS"]
     },
     {
+      id: "gitsentry",
+      category: "fullstack",
+      title: "GitSentry — Autonomous Frontend Architecture & Anti-AI Auditor",
+      badge: "Autonomous CLI • DevTools",
+      image: "/images/gitsentry.png",
+      alt: "GitSentry Autonomous Codebase Auditor",
+      liveUrl: "https://github.com/erikefedavid/GitSentry",
+      githubUrl: "https://github.com/erikefedavid/GitSentry",
+      description:
+        "Autonomous CLI and CI/CD sentinel that audits frontend repositories in under 30ms. Enforces 60fps composite animation physics (blocking layout-thrashing geometry animations) and eliminates generic AI-generated tells and matrix grids.",
+      techStack: ["Node.js CLI", "AST Analysis", "Regex Heuristics", "Design Engineering", "CI/CD"]
+    },
+    {
       id: "devradar",
       category: "fullstack",
       title: "DevRadar — Autonomous Developer Job Scanner & Outreach Agent",
