@@ -86,17 +86,17 @@ export const Projects = () => {
       techStack: ["Node.js", "Google Gemini AI", "GitHub Actions", "Telegram Bot API", "REST APIs"]
     },
     {
-      id: "dashboard",
+      id: "pulseops",
       category: "frontend",
-      title: "Interactive Enterprise Admin Dashboard",
-      badge: "Frontend UI",
+      title: "PulseOps — Enterprise B2B Operations & Logistics Dashboard",
+      badge: "B2B Enterprise • Logistics",
       image: "/images/dashboard.png",
-      alt: "Admin Dashboard UI Preview",
-      liveUrl: "https://erikefedavid.github.io/Admin-Dashboard/",
-      githubUrl: "https://github.com/erikefedavid/Admin-Dashboard",
+      alt: "PulseOps Enterprise Logistics Dashboard",
+      liveUrl: "https://erikefedavid.github.io/PulseOps/",
+      githubUrl: "https://github.com/erikefedavid/PulseOps",
       description:
-        "A responsive management dashboard built with React and Tailwind CSS for seamless data monitoring, user administration, and real-time interface workflows.",
-      techStack: ["React", "Tailwind CSS", "Lucide Icons", "Vite"]
+        "High-density B2B operations and logistics telemetry dashboard. Tracks revenue metrics (₦148.5M), active shipment transit velocity curves, carrier SLA adherence, and real-time dispatch management with instant CSV export.",
+      techStack: ["B2B Architecture", "Tailwind CSS", "Logistics Telemetry", "Geist Design System", "Realtime Filters"]
     },
     {
       id: "swissmark",
