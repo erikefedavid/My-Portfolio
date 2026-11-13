@@ -60,13 +60,26 @@ export const Projects = () => {
       techStack: ["Node.js", "Dense Vectors", "Cosine Dot-Product", "Local RAG", "Edge AI"]
     },
     {
+      id: "nexusrag",
+      category: "fullstack",
+      title: "NexusRAG — Zero-Cloud Agentic RAG & Guardrails",
+      badge: "Agentic RAG • Anti-Hallucination",
+      image: "/images/omnisearch.png",
+      alt: "NexusRAG Autonomous Agentic Retrieval Engine",
+      liveUrl: "https://erikefedavid.github.io/NexusRAG/",
+      githubUrl: "https://github.com/erikefedavid/NexusRAG",
+      description:
+        "Autonomous zero-cloud-egress agentic RAG engine with hybrid dense vector projection, BM25 sparse re-ranking, and proactive self-correction critic guardrails preventing out-of-domain hallucinations.",
+      techStack: ["Agentic RAG", "BM25 Re-Ranking", "Self-Correction Critic", "Zero Egress", "TypeScript"]
+    },
+    {
       id: "gitsentry",
       category: "fullstack",
       title: "GitSentry — Autonomous Frontend Architecture & Anti-AI Auditor",
       badge: "Autonomous CLI • DevTools",
       image: "/images/gitsentry.png",
       alt: "GitSentry Autonomous Codebase Auditor",
-      liveUrl: "https://github.com/erikefedavid/GitSentry",
+      liveUrl: "https://erikefedavid.github.io/GitSentry/",
       githubUrl: "https://github.com/erikefedavid/GitSentry",
       description:
         "Autonomous CLI and CI/CD sentinel that audits frontend repositories in under 30ms. Enforces 60fps composite animation physics (blocking layout-thrashing geometry animations) and eliminates generic AI-generated tells and matrix grids.",
