@@ -34,6 +34,19 @@ export const Projects = () => {
       techStack: ["Next.js", "TypeScript", "RAG Pipeline", "Groq AI", "MongoDB", "Tailwind CSS"]
     },
     {
+      id: "omniagent",
+      category: "fullstack",
+      title: "OmniAgent — Autonomous Problem-Solving ReAct Agent",
+      badge: "Autonomous AI • ReAct Loop",
+      image: "/images/omniagent.png",
+      alt: "OmniAgent Autonomous Architecture",
+      liveUrl: "https://github.com/erikefedavid/OmniAgent",
+      githubUrl: "https://github.com/erikefedavid/OmniAgent",
+      description:
+        "Autonomous ReAct (Reasoning + Acting) problem-solving engine. Decomposes multi-step user objectives into dynamic subtasks, executes telemetry and mathematical tools, and validates evidence against zero-hallucination compliance rules.",
+      techStack: ["Node.js", "ReAct Framework", "Tool Execution", "Vector Matching", "Agentic Loops"]
+    },
+    {
       id: "gitsentry",
       category: "fullstack",
       title: "GitSentry — Autonomous Frontend Architecture & Anti-AI Auditor",
