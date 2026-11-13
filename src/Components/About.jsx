@@ -6,11 +6,17 @@ import {
   Layers, 
   Zap, 
   Code2,
-  ArrowDownToLine
+  ArrowDownToLine,
+  Award
 } from "lucide-react";
 
 export const About = () => {
   const highlights = [
+    {
+      title: "Academic & AI Research",
+      description: "Lead author of accepted peer-reviewed document intelligence research at ICMLDE 2026.",
+      icon: <Award className="w-4 h-4 text-amber-400" />,
+    },
     {
       title: "Pixel-Perfect Implementation",
       description: "Translating Figma designs into responsive code with clean precision.",
@@ -61,7 +67,10 @@ export const About = () => {
               I am a frontend engineer who loves transforming intricate designs into polished, intuitive, and high-performance web applications.
             </p>
             <p>
-              Under <strong className="text-white font-medium">davebuiltit</strong>, I focus on the React and Next.js ecosystems, building dashboards, AI-integrated productivity tools, and modern landing pages with strict attention to typography, spacing, and micro-interactions.
+              Under <strong className="text-white font-medium">davebuiltit</strong>, I engineer high-performance web applications across the React and Next.js ecosystems, building dashboards, autonomous agents, and AI-integrated platforms.
+            </p>
+            <p>
+              I also conduct applied machine learning research, having co-authored an accepted research paper on accelerated optical document intelligence and sub-second RAG architectures at <strong className="text-amber-400/90 font-medium">ICMLDE 2026</strong>.
             </p>
             
             <div className="pt-2 flex items-center gap-2 text-xs text-slate-400 font-mono">
