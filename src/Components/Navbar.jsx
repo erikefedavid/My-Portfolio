@@ -106,14 +106,14 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Dropdown - composite transform & opacity only to prevent layout thrashing */}
         <AnimatePresence>
           {menuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2 }}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
               className="md:hidden overflow-hidden pt-3 pb-1 border-t border-white/10 mt-3"
             >
               <div className="flex flex-col gap-1">
